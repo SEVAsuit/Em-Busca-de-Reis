@@ -15,8 +15,8 @@ namespace Gamekit2D
         void FixedUpdate()
         {
 			distanceTravelled+=speed*Time.deltaTime;
-			transform.position=pathCreator.path.GetPointAtDistance(distanceTravelled);
-			transform.rotation=pathCreator.path.GetRotationAtDistance(distanceTravelled);
+			m_Rigidbody2D.MovePosition(pathCreator.path.GetPointAtDistance(distanceTravelled));
+			m_Rigidbody2D.MoveRotation(pathCreator.path.GetRotationAtDistance(distanceTravelled));
 			
             /*m_PreviousPosition = m_Rigidbody2D.position;
             m_CurrentPosition = m_PreviousPosition + m_NextMovement;
